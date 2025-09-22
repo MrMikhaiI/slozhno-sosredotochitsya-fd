@@ -362,7 +362,15 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .text-decor {
+    min-inline-size: 100%;
+  }
+
   .section__extra>div {
+    grid-column: 1;
+  }
+
+  .section__intro>div {
     grid-column: 1;
   }
 
@@ -399,7 +407,7 @@
   }
 
   .header__text {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
 
   .content__section {

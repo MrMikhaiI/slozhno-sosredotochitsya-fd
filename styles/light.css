@@ -15,7 +15,7 @@
   --section-title-color: #353430;
   --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
-  --second-color: #35343040;
+  --accent-transparent: #32312D;
   --border-color: #353430;
   --border-bottom: #353430;
 }
@@ -33,17 +33,7 @@
     --section-title-color: #353430;
     --heading-text: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
-    --second-color: #35343040;
-  }
-
-  .header__title {
-    color: var(--heading-text);
-    text-shadow: 4px 4px 0px var(--accent-color);
-  }
-
-  .footer__title {
-    color: var(--heading-text);
-    text-shadow: 2px 2px 0px var(--accent-color);
+    --accent-transparent: #35343040;
   }
 
   .decor {

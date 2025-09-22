@@ -1,6 +1,5 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта */
 .page {
-/* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
@@ -20,7 +19,7 @@
   width: 100%;
   height: 100vh;
   margin-block-end: 60px;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
   min-block-size: 668px;
 }
 
@@ -35,7 +34,6 @@
 
 .header__title {
   align-self: center;
-  margin-left: -2%;
   color: var(--heading-text, #db00ff);
   font-weight: 700;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -46,8 +44,8 @@
 .header__text {
   justify-self: flex-end;
   align-self: center;
-  max-width: 50%;
   font-weight: 700;
+  inline-size: 49%;
 }
 
 .header__theme-menu-button {
@@ -64,7 +62,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--second-color, #ff007040);
+  border: 1px solid color-mix(in sRGB, var(--accent-color) 40%, transparent);
 }
 
 .header__theme-menu-button:focus {
@@ -141,13 +139,13 @@
 }
 
 .main {
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 .title {
   font-weight: 700;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 1.3;
 }
 
 .content__title {
@@ -240,7 +238,7 @@
   margin-block-end: 63px;
 }
 
-.section:last-of-type .section__image {
+.section__gallery .section__image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -259,7 +257,7 @@
   grid-row: span 2;
 }
 
-.section:last-of-type {
+.section__gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -288,14 +286,14 @@
   margin-block-end: 80px;
 }
 
-.section:first-of-type,
-.section:nth-of-type(3) {
+.section__intro,
+.section__extra {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.section:last-of-type .section__title {
+.section__gallery .section__title {
   grid-column: 1/-1;
   width: 100%;
   margin: 0;
@@ -329,7 +327,28 @@
   text-shadow: 2px 2px 0px var(--box-shadow, #ff0070);
 }
 
+.section__extra {
+  display: grid;
+  grid-template-columns: minmax(236px, 1fr) 2fr;
+  align-items: start;
+  gap: 20px;
+}
+
+.section__extra .section__title {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.section__extra>div {
+  grid-column: 2;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
+  .section__extra>div {
+    grid-column: 1;
+  }
+
   .main {
     padding: 0px 10px;
   }
@@ -359,32 +378,11 @@
   .header__title {
     margin-left: 0;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    line-height: 82.5%;
     text-shadow: 4px 4px 0px var(--accent-color);
   }
 
   .header__text {
     max-width: 100%;
-  }
-
-  .decorated-zone::after {
-    top: 10px;
-    right: 10px;
-  }
-
-  .decorated-zone::before {
-    bottom: 10px;
-    left: 10px;
-  }
-
-  .decor::before {
-    top: -6px;
-    right: 18px;
-  }
-
-  .decor::after {
-    top: -2px;
-    right: 1px;
   }
 
   .content__section {
@@ -408,15 +406,13 @@
     margin-block-end: 50px;
   }
 
-  .section:nth-of-type(2) .section__title {
+  .section__tips .section__title {
     width: 100%;
   }
 
-  .section:nth-of-type(2) .section__article-list {
-    display: flex;
+  .section__tips .section__article-list {
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
     width: 97%;
     margin-block-end: 50px;
   }
@@ -424,13 +420,6 @@
   .section:nth-of-type(2) .section__article-item {
     flex: 1 0 auto;
     width: 103%;
-  }
-
-  .section:first-of-type .section__title,
-  .section:nth-of-type(3) .section__title {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
   }
 
   .section:first-of-type .section__article-list,
@@ -467,16 +456,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .header__theme-menu {
-    justify-self: end;
-    margin-block-start: 167px;
-  }
-
-  .header__theme-menu-list {
-    flex-direction: column;
-    gap: 13px;
-  }
-
   .header__title {
     margin-left: -3%;
   }
@@ -485,32 +464,12 @@
     max-width: 364px;
   }
 
-  .advice {
-    display: grid;
-    grid-template-columns: auto;
-  }
-
   .advice .content__title {
     max-width: 236px;
   }
 
-  .content__section {
-    gap: 20px;
-  }
-
-  .advice__container {
-    grid-template-columns: auto;
-  }
-
   .section__title {
     width: 35%;
-  }
-
-  .section__article-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-block-end: 80px;
   }
 
   .section:first-of-type .section__title,

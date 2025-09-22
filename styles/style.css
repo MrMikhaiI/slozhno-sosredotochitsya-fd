@@ -340,7 +340,24 @@
   margin-bottom: 20px;
 }
 
-.section__extra>div {
+.section__extra > div {
+  grid-column: 2;
+}
+
+.section__intro {
+  display: grid;
+  grid-template-columns: minmax(236px, 1fr) 2fr;
+  align-items: start;
+  gap: 20px;
+}
+
+.section__intro .section__title {
+  width: 100%;
+  max-inline-size: 400px;
+  margin-bottom: 20px;
+}
+
+.section__intro > div {
   grid-column: 2;
 }
 

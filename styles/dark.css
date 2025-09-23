@@ -16,7 +16,6 @@
   --subtitle-color: #000028;
   --border-bottom: #f1b2ce;
   --bg-image: url(../images/cover-image-dark.png);
-  --accent-transparent: #FF0070;
   --border-color: #ff0070;
 }
 
@@ -34,7 +33,6 @@
     --text-color: #f1b2ce;
     --border-bottom: #f1b2ce;
     --bg-image: url(../images/cover-image-dark.png);
-    --accent-transparent: #ff007040;
     --border-color: #ff0070;
   }
 

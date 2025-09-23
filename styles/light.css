@@ -15,9 +15,12 @@
   --section-title-color: #353430;
   --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
-  --accent-transparent: #32312D;
   --border-color: #353430;
   --border-bottom: #353430;
+
+  .header__theme-menu-button:hover {
+    border: 1px solid color-mix(in sRGB, var(--subtitle-color) 40%, transparent);
+  }
 }
 
 .theme-light .decor {
@@ -33,7 +36,11 @@
     --section-title-color: #353430;
     --heading-text: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
-    --accent-transparent: #35343040;
+    --border-bottom: #353430;
+
+    .header__theme-menu-button:hover {
+      border: 1px solid color-mix(in sRGB, var(--subtitle-color) 40%, transparent);
+    }
   }
 
   .decor {
